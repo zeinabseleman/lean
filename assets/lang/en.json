@@ -1,0 +1,15 @@
+{
+  "Email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "send": "Send",
+  "forget_password": "Forget PassWord?",
+  "confirm_password": "Confirm Password",
+  "Confirmation code": "Confirmation code",
+  "verfication": "Enter the verification code sent to",
+  "Confirm": "Confirm",
+  "first_name": "First Name",
+  "city": "City",
+  "last_name": "Last Name",
+  "notes": "Notes"
+}

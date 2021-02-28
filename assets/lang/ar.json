@@ -1,0 +1,16 @@
+{
+  "Email": "البريد الالكترونى",
+  "password": "كلمه المرور",
+  "login": "تسجيل الدخول ",
+  "send": "ارسال ",
+  "forget_password": "نسيت كلمه المرور؟",
+  "confirm_password": "تاكيد كلمه المرور ",
+  "Confirmation code": "رمز التاكيد ",
+  "verfication": "ادخل رمز التحقق المرسل الى",
+  "Confirm": "تاكيد",
+  "first_name": "الاسم الاول",
+  "city": "المدينه",
+  "last_name": "اسم العائله ",
+  "notes": "ملاحظات"
+
+}
