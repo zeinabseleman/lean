@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 
-class CustomTextFormField extends StatelessWidget {
+class Suggestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      
+    return Scaffold(
+
     );
   }
 }
