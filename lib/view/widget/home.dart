@@ -11,25 +11,27 @@ import 'package:get/get.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-            child:  ResponseWidget(
-              builder:(context , deviceTypeModel) =>Container(
-                color: Colors.grey.shade100,
-                width: deviceTypeModel.screenWidth,
-                height: deviceTypeModel.screenHeight,
-                child: SingleChildScrollView(
+        color: Colors.grey.shade100,
+        width: screenWidth,
+        height: screenHeight,
+            child: Column(
+              children: [
+                CustomContainer(width:screenWidth,height: screenHeight*0.18),
+                SingleChildScrollView(
                   child: Column(
                     children: [
-                      CustomContainer(width:deviceTypeModel.screenWidth,height: deviceTypeModel.screenHeight*0.18 ,),
                       SizedBox(
-                        height: deviceTypeModel.screenHeight/17,
+                          height: 37.0
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           FlatButton(onPressed: (){
-                           // Get.to(MyRequest());
+                            // Get.to(MyRequest());
                           },
                               color: primaryColor,
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -50,71 +52,58 @@ class Home extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                          height: deviceTypeModel.screenHeight/18
+                          height: 40.0
                       ),
-                      Column(
-                        children: [
-                          CustomText(text: 'هذه الصفحه مخصصه لعرض المنتجات التي تم ادراجها', color: Colors.black, fontSize: deviceTypeModel.screenHeight*0.025,),
-                          CustomText(text:  ' في العقد الخاص بك',color: Colors.black, fontSize: deviceTypeModel.screenHeight*0.025,),
-                          CustomText(text:  ' ف يرجي انشاء حساب خاص بك واتباع الخطوات الازمه ',color: Colors.black, fontSize: deviceTypeModel.screenHeight*0.025,),
-                          CustomText(text:  ' نتمكن من انشاء عقدك ومتابعه طلباتك ',color: Colors.black, fontSize: deviceTypeModel.screenHeight*0.025,)
-                        ],
-                      ),
+                      CustomText(text: 'هذه الصفحه مخصصه لعرض المنتجات التي تم ادراجها', color: Colors.black, fontSize: 15.0,fontWeight: FontWeight.w800,height: 2.0,),
+                      CustomText(text:  ' في العقد الخاص بك',color: Colors.black, fontSize: 15.0,fontWeight: FontWeight.w800,height: 2.0),
+                      CustomText(text:  '  يرجي انشاء حساب خاص بك واتباع الخطوات الازمه ',color: Colors.black, fontSize: 15.0,fontWeight: FontWeight.w800,height: 2.0),
+                      CustomText(text:  ' نتمكن من انشاء عقدك ومتابعه طلباتك ',color: Colors.black, fontSize:15.0,fontWeight: FontWeight.w800,height: 2.0),
                       SizedBox(
-                          height: deviceTypeModel.screenHeight/18
+                          height: 30.0
                       ),
+
                       Container(
-                        // width: deviceTypeModel.screenWidth/2,
-                        // height: deviceTypeModel.screenHeight/20,
-                        // height: 200,
+                        padding: EdgeInsets.only(left: 15.0,right: 17.0),
+                        // width: screenWidth*0.9,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             UserInfo(
-                              fontSize: deviceTypeModel.screenHeight*0.025,
+                              fontSize: 20.0,
                               text: 'دخال المعلومات الشخصيه',
                             ),
                             UserInfo(
-                              fontSize: deviceTypeModel.screenHeight*0.025,
+                              fontSize:  20.0,
                               text: 'دخال معلومات الشركه',
                             ),
                             UserInfo(
-                              fontSize: deviceTypeModel.screenHeight*0.025,
+                              fontSize:  20.0,
                               text: 'دخال معلومات العقد',
                             ),
                             UserInfo(
-                              fontSize: deviceTypeModel.screenHeight*0.025,
+                              fontSize:  20.0,
                               text: 'دخال معلومات المنتجات',
-                            )
-                            // Row(
-                            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            //   children: [
-                            //     FlatButton(onPressed: (){},
-                            //       color: secondColor,
-                            //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                            //       child: Text('اضغط'),
-                            //     ),
-                            //     CustomText(text: 'ادخال المعلومات الشخصيه',fontSize: deviceTypeModel.screenHeight*0.025,color: secondColor,),
-                            //     CircleAvatar(backgroundColor: secondColor, radius: 10.0,),
-                            //   ],
-                            // )
+                            ),
                           ],
                         ),
                       )
-                      // ListView.builder(
-                      //   itemCount: names.length,
-                      //   itemBuilder: (context , index){
-                      //     return Container(
-                      //       color: Colors.red,
-                      //      // width: deviceTypeModel.screenWidth,
-                      //       //height: deviceTypeModel.screenHeight / 20,
-                      //     );
-                      //   },
-                      // )
                     ],
                   ),
-                ),
-              ),
+                )
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
+                      //     FlatButton(onPressed: (){},
+                      //       color: secondColor,
+                      //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                      //       child: Text('اضغط'),
+                      //     ),
+                      //     CustomText(text: 'ادخال المعلومات الشخصيه',fontSize: deviceTypeModel.screenHeight*0.025,color: secondColor,),
+                      //     CircleAvatar(backgroundColor: secondColor, radius: 10.0,),
+                      //   ],
+                      // )
+
+              ],
             ),
           ),
     );

@@ -18,7 +18,7 @@ class UserInfo extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           child: Text('اضغط',style: TextStyle(color: Colors.white),),
         ),
-        CustomText(text: 'ادخال المعلومات الشخصيه',fontSize: fontSize,color: secondColor,),
+        CustomText(text: 'ادخال المعلومات الشخصيه',fontSize: fontSize,color: secondColor,height: 1.0,),
         CircleAvatar(backgroundColor: secondColor, radius: 10.0,),
       ],
     );
