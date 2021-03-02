@@ -14,28 +14,29 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Container(
-       // height: 40,
-       // width:SizeConfig.defaultSize * 60 ,
-        width:(width==null)?SizeConfig.defaultSize * 60: width ,
-        child: FlatButton(
+    return Container(
+      height: SizeConfig.defaultSize *5,
+     // width:cc ,
+      width:(width==null)?SizeConfig.defaultSize * 60: width ,
+      child: FlatButton(
 
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 2.0),
           child: CustomText(
-        text:text ,
+      text:text ,
             alignment: Alignment.center,
              color: Colors.white,
+            fontSize:  SizeConfig.defaultSize *2,
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20)
-          ),
-          padding: EdgeInsets.all(10),
-          onPressed: onPressed,
-          color:Constants.primaryColor,
-          //AppColors.primaryColor,
-
         ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(SizeConfig.defaultSize *5)
+        ),
+        padding: EdgeInsets.all(10),
+        onPressed: onPressed,
+        color:Constants.primaryColor,
+        //AppColors.primaryColor,
+
       ),
     );
   }

@@ -17,29 +17,39 @@ class ResetPassWordScreen1 extends StatelessWidget {
 
     SizeConfig().init(context);
     return Scaffold(
-        resizeToAvoidBottomInset:false ,
-        body: Padding(
-          padding: const EdgeInsets.all(15),
-          child: SingleChildScrollView(
-            child: Form(
+     //   resizeToAvoidBottomInset:false ,
+        body:ListView(
+          children: [
+            Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  InputField(
-                    validitor: valid.ValidateMail,
-                    hint:  AppLocal.of(context).getTranslated('Email'),
-                    preffxWidget: Icon(Icons.email,size: 20,),
+                  Image.asset('assets/images/logo.jpg'),
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Form(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InputField(
+                            textInputType: TextInputType.emailAddress,
+                            validitor: valid.ValidateMail,
+                            hint:  AppLocal.of(context).getTranslated('Email'),
+                            preffxWidget: Icon(Icons.email,size:SizeConfig.defaultSize *1.5,),
 
-                  ),
-                
-                  CustomButton(text:AppLocal.of(context).getTranslated('send') ,onPressed: (){
-                    Get.to(ResetPassWordScreen2());
-                  },),
+                          ),
+                 SizedBox(height:SizeConfig.defaultSize *2 ,),
+                          CustomButton(text:AppLocal.of(context).getTranslated('send') ,onPressed: (){
+                            Get.to(ResetPassWordScreen2());
+                          },),
 
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
-            ),
-          ),
+            )
+          ],
         )
     );
   }

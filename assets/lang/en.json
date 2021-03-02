@@ -11,5 +11,11 @@
   "first_name": "First Name",
   "city": "City",
   "last_name": "Last Name",
-  "notes": "Notes"
+  "notes": "Notes",
+  "CRN": "Commercial Registration No",
+  "Send File": "send files",
+  "Send Attachment ": "send attachments",
+  "work address": "work address",
+  "skip":"skip",
+  "Create  contract": "Create  contract"
 }

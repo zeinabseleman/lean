@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:lean/core/helpers/sized_config.dart';
 
 
 
@@ -52,7 +53,7 @@ TextStyle get subTitleTextStle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
 
-        fontSize: 16,
+        fontSize: SizeConfig.defaultSize *2,
         color: Colors.grey[700]),
 
   );

@@ -17,40 +17,61 @@ class LoginScreen extends StatelessWidget {
 
     SizeConfig().init(context);
     return Scaffold(
-      resizeToAvoidBottomInset:false ,
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
-          child: Form(
+     // resizeToAvoidBottomInset:false ,
+      body: ListView(
+        children: [
+          Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                InputField(
-                  validitor: valid.ValidateMail,
-                  hint:  AppLocal.of(context).getTranslated('Email'),
-     preffxWidget: Icon(Icons.email,size: 20,),
 
+
+                Image.asset('assets/images/logo.jpg'),
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Form(
+
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15,right: 15),
+                      child: Column(
+
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InputField(
+                           textInputType: TextInputType.emailAddress,
+                            validitor: valid.ValidateMail,
+                            hint:  AppLocal.of(context).getTranslated('Email'),
+                            preffxWidget: Icon(Icons.email,size: SizeConfig.defaultSize *1.5,),
+
+                          ),
+                          InputField(
+                         //   textInputType: TextInputType.,
+                            hint:  AppLocal.of(context).getTranslated('password'),
+                            preffxWidget: Icon(Icons.lock,size: SizeConfig.defaultSize *1.5,),
+                            validitor: valid.pwdValidator,
+
+                          ),
+                          SizedBox(height: SizeConfig.defaultSize *2,),
+                          CustomButton(text:AppLocal.of(context).getTranslated('login') ,onPressed: (){
+                            Get.to(RegisterScreen());
+                          },),
+                          GestureDetector(
+                              onTap: (){
+                                Get.to(ResetPassWordScreen1());
+                              },
+
+                              child: CustomText(color: Colors.red,alignment: Alignment.topLeft,text: AppLocal.of(context).getTranslated('forget_password'),fontSize: SizeConfig.defaultSize *2,))
+
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                InputField(
-                  hint:  AppLocal.of(context).getTranslated('password'),
-                  preffxWidget: Icon(Icons.lock,size: 20,),
-                  validitor: valid.pwdValidator,
-
-                ),
-                CustomButton(text:AppLocal.of(context).getTranslated('login') ,onPressed: (){
-                  Get.to(RegisterScreen());
-                },),
-                GestureDetector(
-                  onTap: (){
-                    Get.to(ResetPassWordScreen1());
-                  },
-
-                    child: CustomText(color: Colors.red,alignment: Alignment.topLeft,text: AppLocal.of(context).getTranslated('forget_password'),))
-
               ],
             ),
           ),
-        ),
+        ],
+
       )
     );
   }

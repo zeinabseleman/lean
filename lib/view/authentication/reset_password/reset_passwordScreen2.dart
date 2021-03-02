@@ -17,35 +17,47 @@ class ResetPassWordScreen2 extends StatelessWidget {
 
     SizeConfig().init(context);
     return Scaffold(
-        resizeToAvoidBottomInset:false ,
-        body: Padding(
-          padding: const EdgeInsets.all(15),
-          child: SingleChildScrollView(
-            child: Form(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InputField(
-                    validitor: valid.ValidateMail,
-                    hint:  AppLocal.of(context).getTranslated('password'),
-                    preffxWidget: Icon(Icons.email,size: 20,),
 
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                Image.asset('assets/images/logo.jpg'),
+
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: SingleChildScrollView(
+                    child: Form(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InputField(
+                            validitor: valid.ValidateMail,
+                            hint:  AppLocal.of(context).getTranslated('password'),
+                            preffxWidget: Icon(Icons.email,size: SizeConfig.defaultSize *1.5,),
+
+                          ),
+                          InputField(
+                            hint:  AppLocal.of(context).getTranslated('confirm_password'),
+                            preffxWidget: Icon(Icons.lock,size:SizeConfig.defaultSize *1.5,),
+                            validitor: valid.pwdValidator,
+
+                          ),
+                          SizedBox(height:SizeConfig.defaultSize *2 ,),
+
+                          CustomButton(text:AppLocal.of(context).getTranslated('login') ,onPressed: (){
+                            Get.to(ResetPassWordScreen3());
+                          },),
+
+
+                        ],
+                      ),
+                    ),
                   ),
-                  InputField(
-                    hint:  AppLocal.of(context).getTranslated('confirm_password'),
-                    preffxWidget: Icon(Icons.lock,size: 20,),
-                    validitor: valid.pwdValidator,
-
-                  ),
-                  CustomButton(text:AppLocal.of(context).getTranslated('login') ,onPressed: (){
-                    Get.to(ResetPassWordScreen3());
-                  },),
-
-
-                ],
-              ),
-            ),
-          ),
+                ),
+              ],
+            )
+          ],
         )
     );
   }

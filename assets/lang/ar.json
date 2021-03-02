@@ -11,6 +11,12 @@
   "first_name": "الاسم الاول",
   "city": "المدينه",
   "last_name": "اسم العائله ",
-  "notes": "ملاحظات"
+  "notes": "ملاحظات",
+  "CRN": "رقم السجل التجارى ",
+  "Send File": "ارفاق ملفات",
+  "Send Attachment": "ارفاق مستندات",
+  "work address": "مكان العمل",
+  "skip":"تخطى",
+  "Create  contract": "انشاء عقد"
 
 }

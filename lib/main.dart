@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ void main() {
   Locale locale=Locale('ar','');
 //  Locale locale=Locale('en','');
 
-  runApp(MyApp(locale));
+  runApp(DevicePreview(builder:(context) =>MyApp(locale)));
 }
 
 class MyApp extends StatefulWidget {
@@ -33,6 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
 
+      builder: DevicePreview.appBuilder,
       localizationsDelegates: [
         AppLocal.delegate,
 
