@@ -18,6 +18,10 @@ dependencies:
   get: ^3.25.4
   google_fonts: ^1.1.1
   device_preview: ^0.5.5
+  getwidget: ^1.2.4
+  http: ^0.12.0+4
+
+
 
 
 

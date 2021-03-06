@@ -3,28 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:lean/view/authentication/login_screen.dart';
-
-
-import 'core/lang/app_local.dart';
-
-
-
+import 'package:lean/view/authentication/welcome_screen.dart';
+import 'package:lean/view/control_view.dart';
+import 'package:lean/view/lang/app_local.dart';
+import 'package:lean/view/widget/company_info.dart';
+import 'package:lean/view/widget/contract_info.dart';
 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Locale locale=Locale('ar','');
-//  Locale locale=Locale('en','');
-
-  runApp(DevicePreview(builder:(context) =>MyApp(locale)));
+  Locale locale = Locale('ar', '');
+  runApp(DevicePreview(builder:(context) => MyApp(locale)));
 }
 
 class MyApp extends StatefulWidget {
   final Locale locale;
 
   MyApp(this.locale);
-  // This widget is the root of your application.
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -33,8 +30,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
       builder: DevicePreview.appBuilder,
+
       localizationsDelegates: [
         AppLocal.delegate,
 
@@ -57,19 +54,12 @@ class _MyAppState extends State<MyApp> {
         return supportedLocales.first;
       }
       ,
-
-
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: LoginScreen(),
+      home: WelcomeScreen(),
+      //LoginScreen(),
+   //  ContollView(),
 
     );
   }
 }
-
 
