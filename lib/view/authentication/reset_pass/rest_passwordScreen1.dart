@@ -27,7 +27,7 @@ class ResetPassWordScreen1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/logo.jpg',
+                'assets/images/lean_logo.jpeg',
                 width: SizeConfig.screenWidth * 0.6,
                 height: SizeConfig.screenHeight * 0.4,
               ),

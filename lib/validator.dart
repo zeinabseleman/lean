@@ -34,7 +34,14 @@ class Validator{
    }
 
  }
+ String   ValidateType(String value){
 
+   if (value.isEmpty) return 'type is requierd';
+   else {
+     return null;
+   }
+
+ }
  String   ValidateUser(String value){
 
    if (value.isEmpty) return 'UserName is requierd';

@@ -30,7 +30,7 @@ class ResetPassWordScreen3 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Image.asset(
-                'assets/images/logo.jpg',
+                'assets/images/lean_logo.jpeg',
                 width: SizeConfig.screenWidth * 0.6,
                 height: SizeConfig.screenHeight * 0.4,
               ),
@@ -54,13 +54,23 @@ class ResetPassWordScreen3 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        CustomText(
-                          text: AppLocal.of(context).getTranslated('verfication'),
-                          alignment: Alignment.topRight,
-                          color: primaryColor,),
-                        CustomText(text: '+966541616111',
-                          alignment: Alignment.topRight,
-                          color: primaryColor,),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 32.0,bottom: 15.0),
+                          child: Container(
+                            child: Column(
+                              children: [
+                                CustomText(
+                                  text: AppLocal.of(context).getTranslated('verfication'),
+                                  alignment: Alignment.centerRight,
+                                  color: primaryColor,),
+                                CustomText(text: '966541616111+',
+                                  alignment: Alignment.centerRight,
+                                  color: primaryColor,),
+
+                              ],
+                            )
+                          ),
+                        ),
 
                         InputField(
                           textAlign: TextAlign.center,
@@ -70,7 +80,6 @@ class ResetPassWordScreen3 extends StatelessWidget {
 
                         ),
                         SizedBox(height: SizeConfig.defaultSize * 2,),
-
                         CustomButton(
                           text: AppLocal.of(context).getTranslated('Confirm'),
                           onPressed: () {

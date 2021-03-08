@@ -29,7 +29,7 @@ class InputField extends StatelessWidget {
       this.controller,
       @required this.hint,
       this.widget,
-      this.preffxWidget,this.onSaved,this.validitor,this.textAlign,this.suffxWidget,this.maxLines=null,this.ReadOnly=false,this.borderColor,this.textInputType});
+      this.preffxWidget,this.onSaved,this.validitor,this.textAlign=TextAlign.start,this.suffxWidget,this.maxLines=null,this.ReadOnly=false,this.borderColor,this.textInputType});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class InputField extends StatelessWidget {
                 maxLines: maxLines,
 
               //  keyboardType: TextInputType.multiline,
-             //  textAlign:  textAlign!=null? textAlign,
+               textAlign: textAlign,
                 validator: validitor,
                 onSaved: onSaved,
                 autofocus: false,
@@ -70,7 +70,7 @@ class InputField extends StatelessWidget {
                   ),
                  contentPadding: EdgeInsets.only(top:SizeConfig.defaultSize*1/2+1 ,right: SizeConfig.defaultSize,bottom: SizeConfig.defaultSize*1/2),
                   prefixIcon:preffxWidget ,
-              suffixIcon: suffxWidget,
+              suffixIcon: widget,
                   hintText: hint,
 
                   hintStyle: subTitleTextStle,
@@ -100,7 +100,7 @@ class InputField extends StatelessWidget {
               ),
             ),
 
-            widget == null ? Container() : Center(child: widget),
+           // widget == null ? Container() : Center(child: widget),
           ],
         )
       ],

@@ -11,6 +11,7 @@ import 'package:lean/view/custom_widget/sized_config.dart';
 import 'package:lean/view/lang/app_local.dart';
 import 'package:lean/view/validator/validator.dart';
 import 'package:lean/view/widget/home.dart';
+import 'package:lean/view/widget/more.dart';
 import 'package:lean/view_model/auth_view_model.dart';
 
 import '../control_view.dart';
@@ -18,7 +19,7 @@ import 'company_info.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
   final valid = Validator();
-  static  GlobalKey<FormState>_globalKey=GlobalKey();
+  static  GlobalKey<FormState>_globalKey2=GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class PersonalInformationScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0,right: 20.0),
                     child: Form(
-                      key: _globalKey,
+                      key: _globalKey2,
                       child: Column(
                        // mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -77,8 +78,7 @@ class PersonalInformationScreen extends StatelessWidget {
                           InputField(
                             hint:  AppLocal.of(context).getTranslated('city'),
                             //  preffxWidget: Icon(Icons.lock,size: 20,),
-                            // validitor: valid.pwdValidator,
-
+                           validitor: valid.ValidateAdrees
 
                           ),
                           SizedBox(height:SizeConfig.defaultSize *2 ,),
@@ -96,11 +96,13 @@ class PersonalInformationScreen extends StatelessWidget {
                           SizedBox(height:SizeConfig.defaultSize *2 ,),
 
                           InputField(
+                            textInputType:TextInputType.number,
                             onSaved: (value){
                               controller.mobile_number=value;
 
                             },
-                            // hint:  AppLocal.of(context).getTranslated('Email'),
+                            hint:  "رقم الموبايل ",
+                            //AppLocal.of(context).getTranslated('Email'),
                             //  preffxWidget: Icon(Icons.lock,size: 20,),
                             validitor: valid.Validatephone,
                             // suffxWidget: Text('966-'),
@@ -147,19 +149,56 @@ class PersonalInformationScreen extends StatelessWidget {
                       children: [
                         CustomButton(width: SizeConfig.defaultSize *30,text:AppLocal.of(context).getTranslated('send') ,onPressed: ()async{
 
-                          _globalKey.currentState.save();
-                          if(_globalKey.currentState.validate()){
-                            User user=   await  controller.register();
-                            print(user);
-                            if(user.id!=null){
+                          if(_globalKey2.currentState.validate()){
+                            _globalKey2.currentState.save();
 
-                              Get.to(()=>ContollView());    }
-                          /*  else{
-                              Get.to(()=>ResetPassWordScreen1());
+                              if(controller.validpass()==1){
+
+                              try{
+                                User user=   await  controller.register2();
+
+                                print(user);
+                                if(user.id!=null){
+
+                                  Get.to(()=>More());
+                                }
+                                else{
+                                  Get.snackbar('sorry', 'the user not found  ',snackPosition:SnackPosition.BOTTOM);
+                                }
+                              }
+                              catch(e){
+                                Get.snackbar('sorry', 'this email or mobil_number already exist  ',snackPosition:SnackPosition.BOTTOM);
+
+                              }
+
+                            }
+                            else{
+                            Get.snackbar('sorry', 'please enter same password ',snackPosition:SnackPosition.BOTTOM);
+                            }
+                            //Get.snackbar('fill data', 'please try again',);
+                            /*  if(controller.validpass()==1){
+                              Get.to(()=>ContollView());
+
+                            }
+                            else{
+                            Get.snackbar('sorry', 'please enter same password ',);
                             }*/
+
+
+                            // User user=   await  controller.register2();
+                            // //  String message=   await  controller.register();
+                            // //   if(message=="sucessful"){
+                            // //    Get.to(()=>ContollView());
+                            // //   }
+                            // print(user);
+                            // if(user.id!=null){
+                            //
+                            //   Get.to(()=>More());
+                            // }
+                            //  else{
+                            //   Get.to(()=>RegisterScreen());
+                            // }
                           }
-
-
 
                         },),
                         SizedBox(height: SizeConfig.defaultSize *1),

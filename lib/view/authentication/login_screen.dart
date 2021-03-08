@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lean/model/user_model.dart';
 import 'package:lean/view/authentication/register_screen.dart';
 import 'package:lean/view/authentication/reset_pass/rest_passwordScreen1.dart';
+import 'package:lean/view/control_view.dart';
 import 'package:lean/view/custom_widget/custom_botton.dart';
 import 'package:lean/view/custom_widget/custom_text.dart';
 import 'package:lean/view/custom_widget/input_field.dart';
@@ -10,9 +11,8 @@ import 'package:lean/view/custom_widget/sized_config.dart';
 import 'package:lean/view/lang/app_local.dart';
 import 'package:lean/view/validator/validator.dart';
 import 'package:lean/view/widget/home.dart';
+import 'package:lean/view/widget/more.dart';
 import 'package:lean/view_model/auth_view_model.dart';
-
-import '../control_view.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
              => Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/logo.jpg',width: SizeConfig.screenWidth*0.6,height: SizeConfig.screenHeight*0.4,),
+                  Image.asset('assets/images/lean_logo.jpeg',width: SizeConfig.screenWidth*0.6,height: SizeConfig.screenHeight*0.4,),
                   SizedBox(height: SizeConfig.defaultSize *5,),
                   Padding(
                     padding: const EdgeInsets.only(left: 15.0,right: 15.0),
@@ -76,18 +76,24 @@ class LoginScreen extends StatelessWidget {
 
                               _globalKey.currentState.save();
                               if(_globalKey.currentState.validate()){
-                                User user=   await  controller.login();
-                                print(user);
-                                if(user.id!=null){
+                                try{
+                                  User user;
+                                  user =   await  controller.login();
+                                  print("user.iduser.id${user.id}");
+                                  if(user.id!=null){
 
-                                  Get.to(()=>ContollView());    }
-                                else{
-                                  Get.to(()=>ResetPassWordScreen1());
+                                    Get.to(()=>More());
+                                  }
+                                /*  else{
+                                    Get.snackbar('invalid account', 'please try again',);
+                                  }*/
                                 }
+                                catch(e){
+                                  Get.snackbar('invalid account', 'please check your data and try again',snackPosition:SnackPosition.BOTTOM );
+
+                                }
+
                               }
-
-
-
 
                             },),
                             SizedBox(height:SizeConfig.defaultSize *2 ,),

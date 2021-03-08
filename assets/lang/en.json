@@ -38,5 +38,14 @@
   "Suggestions and notes": "Suggestions and notes",
   "Logout": "Logout",
   "back": "back",
-  "send your suggestion and feedback": "send your suggestion and feedback"
+  "send your suggestion and feedback": "send your suggestion and feedback",
+  "vaild_phone1": "phone is requierd",
+  "vaild_phone2": "please enter valid phone number",
+  "vaild_passWord1": "password is requierd",
+  "vaild_passWord2": "Password must be longer than 6 characters",
+  "vaild_city": "city is requierd",
+  "valid_userName": "userName is requierd",
+  "valid_email1": "Email is requierd",
+  "valid_email2": "Enter Valid Email"
+
 }

@@ -13,9 +13,10 @@ class CustomButton extends StatelessWidget {
   final double textHeight;
   final Alignment alignment;
   final double sizeBoxWidth;
+  final Color color;
 
 
-  CustomButton({this.onPressed, this.text='',this.width,this.textHeight,this.alignment=Alignment.center,this.sizeBoxWidth});
+  CustomButton({this.onPressed, this.text='',this.width,this.textHeight,this.alignment=Alignment.center,this.sizeBoxWidth,this.color=primaryColor});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class CustomButton extends StatelessWidget {
         ),
         padding: EdgeInsets.all(10),
         onPressed: onPressed,
-        color:primaryColor,
+        color:color,
         //AppColors.primaryColor,
 
       ),

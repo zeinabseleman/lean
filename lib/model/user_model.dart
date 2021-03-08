@@ -3,8 +3,8 @@
 import 'package:lean/execptions/execptions.dart';
 
 class User{
-  String first_name,last_name,email,token,password,business_info,status;
-  int id,otp,mobile_number;
+ String first_name,last_name,email,token,password,business_info,status,mobile_number;
+ int id,otp;
   User({this.first_name, this.last_name,this.password ,this.email,this.token,this.id,this.business_info,this.mobile_number,this.otp,this.status});
   User.fromJson(Map <String,dynamic>jsonObject){
     this.id=jsonObject['id'];

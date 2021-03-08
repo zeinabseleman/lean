@@ -10,10 +10,6 @@ import 'package:lean/view/custom_widget/sized_config.dart';
 const Color darkGreyClr = Color(0xFF121212);
 Color darkHeaderClr = Colors.grey[800];
 
-class Themes {
-
-
-}
 
 TextStyle get headingTextStyle {
   return GoogleFonts.lato(
@@ -47,11 +43,11 @@ TextStyle get titleTextStle {
 }
 
 TextStyle get subTitleTextStle {
-  return GoogleFonts.lato(
+  return  GoogleFonts.lato(
     textStyle: TextStyle(
-
         fontSize: SizeConfig.defaultSize *2,
-        color: Colors.grey[700]),
+        color: Colors.grey[700]
+    ),
 
   );
 }

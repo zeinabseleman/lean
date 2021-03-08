@@ -38,5 +38,13 @@
   "Suggestions and notes": "اقتراحات و ملاحظات",
   "Logout": "تسجيل الخروج",
   "back": "العوده",
-  "send your suggestion and feedback": "ارسل اقتراحك وملاحظاتك"
+  "send your suggestion and feedback": "ارسل اقتراحك وملاحظاتك",
+  "vaild_phone1": "رقم الموبايل مطلوب",
+  "vaild_phone2": "من فضلك ادخل رقم صحيح",
+  "vaild_passWord1": "هذا الحقل مطلوب",
+  "vaild_passWord2": "كلمه السر يجب ان تكون اكبر من 6 احرف",
+  "vaild_city": "هذا الحقل مطلوب",
+  "valid_userName": "هذا الحقل مطلوب",
+  "valid_email1": "هذا الحقل مطلوب",
+  "valid_email2": "ادخل بريد الكترونى صحيح"
 }

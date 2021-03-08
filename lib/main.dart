@@ -2,7 +2,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:lean/view/authentication/login_screen.dart';
+import 'package:lean/view/authentication/reset_pass/reset_passwordScreen3.dart';
+import 'package:lean/view/authentication/reset_pass/rest_passwordScreen1.dart';
 import 'package:lean/view/authentication/welcome_screen.dart';
 import 'package:lean/view/control_view.dart';
 import 'package:lean/view/lang/app_local.dart';
@@ -56,8 +57,6 @@ class _MyAppState extends State<MyApp> {
       ,
       debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),
-      //LoginScreen(),
-   //  ContollView(),
 
     );
   }

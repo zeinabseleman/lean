@@ -39,23 +39,22 @@ class ContollView extends StatelessWidget {
           },
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.menu,size: 30.0,),
-              label: 'اكثر',
+              icon: Icon(Icons.home_outlined,size: 30.0),
+                  label: 'الرئيسيه',
+              // backgroundColor: primaryColor
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.request_page_outlined,size: 30.0),
+                label: 'طلباتي'
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_outline_outlined,size: 30.0),
                 label: 'الملف الشخصي'
             ),
             BottomNavigationBarItem(
-                 icon: Icon(Icons.request_page_outlined,size: 30.0),
-                label: 'طلباتي'
+              icon: Icon(Icons.menu,size: 30.0,),
+              label: 'اكثر',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined,size: 30.0),
-                  label: 'الرئيسيه',
-              // backgroundColor: primaryColor
-            ),
-
           ]
       ),
     );

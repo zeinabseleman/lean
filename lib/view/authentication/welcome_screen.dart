@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lean/costant.dart';
 import 'package:lean/view/authentication/login_screen.dart';
 import 'package:lean/view/authentication/register_screen.dart';
 import 'package:lean/view/authentication/reset_pass/rest_passwordScreen1.dart';
@@ -10,6 +11,8 @@ import 'package:lean/view/custom_widget/sized_config.dart';
 import 'package:lean/view/lang/app_local.dart';
 import 'package:lean/view/validator/validator.dart';
 import 'package:lean/view/widget/personal_information.dart';
+
+import '../control_view.dart';
 
 
 class WelcomeScreen extends StatelessWidget {
@@ -27,14 +30,18 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/logo.jpg',width: SizeConfig.screenWidth*0.6,height: SizeConfig.screenHeight*0.4,),
+              Image.asset('assets/images/lean_logo.jpeg',width: SizeConfig.screenWidth*0.6,height: SizeConfig.screenHeight*0.4,),
               SizedBox(height: SizeConfig.defaultSize *5.5,),
-              CustomButton(text:AppLocal.of(context).getTranslated('login') ,width: SizeConfig.screenWidth*0.8,onPressed: (){
+              CustomButton(text:AppLocal.of(context).getTranslated('login') ,width: SizeConfig.screenWidth*0.8,
+                onPressed: (){
                 Get.to(()=>LoginScreen());
               },),
               SizedBox(height:SizeConfig.defaultSize *2 ,),
-              CustomButton(text:AppLocal.of(context).getTranslated('register') ,width: SizeConfig.screenWidth*0.8,onPressed: (){
-                Get.to(()=>PersonalInformationScreen());
+              CustomButton(text:AppLocal.of(context).getTranslated('register') ,
+                width: SizeConfig.screenWidth*0.8,
+                color: secondColor,
+                onPressed: (){
+                Get.to(()=>ContollView());
               },),
             ],
           ),
