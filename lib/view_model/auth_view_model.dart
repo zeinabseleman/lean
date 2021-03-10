@@ -179,18 +179,18 @@ int validpass(){
        ,};
 
      http.Response response = await http.post(ApiUtl.Auth_Register, headers: headers, body: body);
-     print(response.statusCode);
+     print("response.statusCoderesponse.statusCode${response.statusCode}");
 
      switch (response.statusCode) {
        case 200:
          var body = jsonDecode(response.body);
          print(body);
          var data = body['data'];
-         print(data);
+         print("datadata${data}");
          User user;
          try{
            user=User.fromJson(data);
-           print('Token : ${user.id}');
+           print('Token : ${user.first_name}');
            print(response);
            print("apic_token${user.token}");
          }

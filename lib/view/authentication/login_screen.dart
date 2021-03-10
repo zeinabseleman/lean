@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                                   User user;
                                   user =   await  controller.login();
                                   print("user.iduser.id${user.id}");
-                                  if(user.id!=null){
+                                  if(user.email!=null){
 
                                     Get.to(()=>More());
                                   }

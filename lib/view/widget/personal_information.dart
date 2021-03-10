@@ -158,12 +158,12 @@ class PersonalInformationScreen extends StatelessWidget {
                                 User user=   await  controller.register2();
 
                                 print(user);
-                                if(user.id!=null){
+                                if(user.email!=null){
 
                                   Get.to(()=>More());
                                 }
                                 else{
-                                  Get.snackbar('sorry', 'the user not found  ',snackPosition:SnackPosition.BOTTOM);
+                                  Get.snackbar('sorry', 'somthing error !!!',snackPosition:SnackPosition.BOTTOM);
                                 }
                               }
                               catch(e){
